@@ -1,39 +1,53 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# FlutterGuitarChord
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Simple and easy to use Flutter Guitar Chord widget using custom painter for guitar chord application
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+_You can use [guitar_chord_library](https://pub.dev/packages/guitar_chord_library) package for chord data_
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Preview
 
-## Features
+<img src="https://raw.githubusercontent.com/ygnCybernoob/flutter_guitar_chord/main/preview/preview1.gif" height="500em">
+<img src="https://raw.githubusercontent.com/ygnCybernoob/flutter_guitar_chord/main/preview/preview2.gif" height="500em">
+<img src="https://raw.githubusercontent.com/ygnCybernoob/flutter_guitar_chord/main/preview/preview2.gif" height="500em">
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Getting Started
 
-## Getting started
+To use this plugin, add flutter_guitar_chord as a dependency in your [pubspec.yaml](https://flutter.io/using-packages/) file.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## Pubspec.yaml
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+    flutter_guitar_chord: 0.0.1
 ```
 
-## Additional information
+## Usage Examples
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+_You can use [guitar_chord_library](https://pub.dev/packages/guitar_chord_library) package for chord data_
+
+```dart
+import 'package:flutter_guitar_chord/flutter_guitar_chord.dart';
+
+//...//
+
+FlutterGuitarChord(
+    baseFret: 1,
+    chordName: 'Cmajor',
+    fingers: '0 3 2 0 1 0',
+    frets: '-1 3 2 0 1 0',
+    totalString: 6,
+    // labelColor: Colors.teal,
+    // tabForegroundColor: Colors.white,
+    // tabBackgroundColor: Colors.deepOrange,
+    // barColor: Colors.black,
+    // stringColor: Colors.red,
+),
+```
+
+## Note
+
+Pull request are always welcome to contribute, [flutter_guitar_chord](https://github.com/ygnCybernoob/flutter_guitar_chord/) github repo.
+
+## Release notes
+
+See [CHANGELOG](https://github.com/ygnCybernoob/flutter_guitar_chord/blob/main/CHANGELOG.md)
