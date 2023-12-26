@@ -1,6 +1,6 @@
 name: flutter_guitar_chord
 description: Simple and easy to use Flutter Guitar Chord widget using custom painter for guitar chord application
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/ygnCybernoob/flutter_guitar_chord
 
 environment:

@@ -18,7 +18,7 @@ To use this plugin, add flutter_guitar_chord as a dependency in your [pubspec.ya
 
 ```yaml
 dependencies:
-    flutter_guitar_chord: 0.0.1
+    flutter_guitar_chord: ^0.0.2
 ```
 
 ## Usage Examples
