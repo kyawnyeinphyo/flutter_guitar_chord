@@ -85,12 +85,11 @@ packages:
   guitar_chord_library:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "3cc24f994627e703fde0a9824d4ec613c56af193"
-      url: "https://github.com/ygnCybernoob/guitar_chord_library.git"
-    source: git
-    version: "0.0.1"
+      name: guitar_chord_library
+      sha256: ec0f932d7a0de9ed0c3f537c6a496b7bcfadfb67d23ed07638bfa3c85371a219
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   lints:
     dependency: transitive
     description:
