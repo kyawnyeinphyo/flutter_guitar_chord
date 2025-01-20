@@ -36,6 +36,9 @@ class FlutterGuitarChord extends StatelessWidget {
   /// The stroke width of the strings
   final double stringStroke;
 
+  /// Different string strokes
+  final bool differentStringStrokes;
+
   /// The stroke width of the bars
   final double barStroke;
 
@@ -70,6 +73,7 @@ class FlutterGuitarChord extends StatelessWidget {
     this.fingerSize = 24,
     this.barCount = 4,
     this.stringStroke = 2,
+    this.differentStringStrokes = false,
     this.barStroke = 1,
     this.firstFrameStroke = 4,
     this.stringColor = const Color(0xff000000),
@@ -95,6 +99,7 @@ class FlutterGuitarChord extends StatelessWidget {
             fingerSize: fingerSize,
             firstFrameStroke: firstFrameStroke,
             stringStroke: stringStroke,
+            differentStringStrokes: differentStringStrokes,
             totalString: totalString,
             barColor: barColor,
             labelColor: labelColor,

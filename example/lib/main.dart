@@ -123,6 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           fingers: position.fingers,
                           frets: position.frets,
                           totalString: instrument.stringCount,
+                          stringStroke: 3,
+                          differentStringStrokes: true
                           // labelColor: Colors.teal,
                           // tabForegroundColor: Colors.white,
                           // tabBackgroundColor: Colors.deepOrange,
