@@ -128,6 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           // tabBackgroundColor: Colors.deepOrange,
                           // barColor: Colors.black,
                           // stringColor: Colors.red,
+                          // labelOpenStrings: true,
                         ),
                       ),
                     ],
