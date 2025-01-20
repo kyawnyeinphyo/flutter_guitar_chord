@@ -44,6 +44,9 @@ class ChordPainter extends CustomPainter {
   /// The color of the bars
   final Color barColor;
 
+  /// The color of the first frame
+  final Color firstFrameColor;
+
   /// The background color of tabs
   final Color tabBackgroundColor;
 
@@ -66,6 +69,7 @@ class ChordPainter extends CustomPainter {
     required this.fingers,
     required this.stringColor,
     required this.barColor,
+    required this.firstFrameColor,
     required this.tabBackgroundColor,
     required this.tabForegroundColor,
     required this.labelColor,
@@ -121,7 +125,7 @@ class ChordPainter extends CustomPainter {
         ),
         paint
           ..strokeWidth = i == 0 ? firstFrameStroke : barStroke
-          ..color = barColor,
+          ..color = i == 0 ? firstFrameColor : barColor,
       );
     }
 
@@ -275,6 +279,7 @@ class ChordPainter extends CustomPainter {
         old.fingers != fingers ||
         old.stringColor != stringColor ||
         old.barColor != barColor ||
+        old.firstFrameColor != firstFrameColor ||
         old.tabBackgroundColor != tabBackgroundColor ||
         old.tabForegroundColor != tabForegroundColor ||
         old.labelColor != labelColor;
