@@ -53,6 +53,9 @@ class ChordPainter extends CustomPainter {
   /// The color of labels
   final Color labelColor;
 
+  /// The color of the muted labels/strings.
+  final Color mutedColor;
+
   /// fingers and frets must be same with totalString
   ChordPainter({
     required this.fingerSize,
@@ -69,6 +72,7 @@ class ChordPainter extends CustomPainter {
     required this.tabBackgroundColor,
     required this.tabForegroundColor,
     required this.labelColor,
+    required this.mutedColor
   })  : _stringsList = frets.split(' '),
         _fingeringList = fingers.split(' ') {
     assert(_stringsList.length == totalString);
@@ -106,7 +110,7 @@ class ChordPainter extends CustomPainter {
           x,
           size.height - _margin,
         ),
-        paint..color = stringColor,
+        _stringsList[i] != '-1' ? (paint..color = stringColor) : (paint..color = mutedColor),
       );
     }
 
@@ -166,7 +170,7 @@ class ChordPainter extends CustomPainter {
         text: TextSpan(
           text: 'X',
           style: TextStyle(
-            color: labelColor,
+            color: mutedColor != null ? mutedColor : labelColor,
             fontSize: 14,
             fontWeight: FontWeight.bold,
             textBaseline: TextBaseline.alphabetic,
