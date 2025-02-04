@@ -36,6 +36,9 @@ class FlutterGuitarChord extends StatelessWidget {
   /// The stroke width of the strings
   final double stringStroke;
 
+  /// Different string strokes
+  final bool differentStringStrokes;
+
   /// The stroke width of the bars
   final double barStroke;
 
@@ -63,6 +66,9 @@ class FlutterGuitarChord extends StatelessWidget {
   /// Status to show label
   final bool showLabel;
 
+  /// Status to show open strings label o
+  final bool labelOpenStrings;
+
   const FlutterGuitarChord({
     Key? key,
     required this.fingers,
@@ -73,6 +79,7 @@ class FlutterGuitarChord extends StatelessWidget {
     this.fingerSize = 24,
     this.barCount = 4,
     this.stringStroke = 2,
+    this.differentStringStrokes = false,
     this.barStroke = 1,
     this.firstFrameStroke = 4,
     this.stringColor = const Color(0xff000000),
@@ -82,6 +89,7 @@ class FlutterGuitarChord extends StatelessWidget {
     this.tabForegroundColor = const Color(0xffffffff),
     this.labelColor = const Color(0xff000000),
     this.showLabel = true,
+    this.labelOpenStrings = false
   }) : super(key: key);
 
   @override
@@ -99,6 +107,7 @@ class FlutterGuitarChord extends StatelessWidget {
             fingerSize: fingerSize,
             firstFrameStroke: firstFrameStroke,
             stringStroke: stringStroke,
+            differentStringStrokes: differentStringStrokes,
             totalString: totalString,
             barColor: barColor,
             firstFrameColor: firstFrameColor,
@@ -106,6 +115,7 @@ class FlutterGuitarChord extends StatelessWidget {
             stringColor: stringColor,
             tabBackgroundColor: tabBackgroundColor,
             tabForegroundColor: tabForegroundColor,
+            labelOpenStrings: labelOpenStrings
           ),
         ),
         if (showLabel)

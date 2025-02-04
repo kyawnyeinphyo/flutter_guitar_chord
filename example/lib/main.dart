@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<String> _instrumentList = ['Guitar', 'Ukulele'];
   String? _selection;
   bool _useFlat = true;
+  bool _useStringThickness = true;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 .toList(),
           ),
           actions: [
-            Column(
+            Wrap(
+              spacing: 10,
               children: [
                 Row(
                   children: [
@@ -77,6 +79,23 @@ class _MyHomePageState extends State<MyHomePage> {
                       onChanged: (v) {
                         setState(() {
                           _useFlat = v;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Text(
+                      'String Thickness',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
+                    Switch(
+                      value: _useStringThickness,
+                      onChanged: (v) {
+                        setState(() {
+                          _useStringThickness = v;
                         });
                       },
                     ),
@@ -123,6 +142,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           fingers: position.fingers,
                           frets: position.frets,
                           totalString: instrument.stringCount,
+                          stringStroke: 1,
+                          differentStringStrokes: _useStringThickness
+                          // stringColor: Colors.red,
                           // labelColor: Colors.teal,
                           // tabForegroundColor: Colors.white,
                           // tabBackgroundColor: Colors.deepOrange,
@@ -130,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           barStroke: 0.5,
                           firstFrameColor: Colors.black,
                           barColor: Colors.grey,
-                          // stringColor: Colors.red,
+                          // labelOpenStrings: true,                          
                         ),
                       ),
                     ],
