@@ -99,11 +99,18 @@ class ChordPainter extends CustomPainter {
 
     _barGap = ((size.height - _margin * 2) / bar);
 
-    final paint = Paint()..strokeWidth = stringStroke;
+    final paint = Paint();
 
     ///strings painter
     for (int i = 0; i < totalString; i++) {
       final x = _margin + (i * _stringGap);
+      if (differentStringStrokes) {
+        // Adjust stroke width for strings with varying thickness
+        paint.strokeWidth = (totalString - i) * stringStroke;
+      } else {
+        // Use the same thickness for all strings
+        paint.strokeWidth = stringStroke;
+      }
       canvas.drawLine(
         Offset(x, _margin),
         Offset(
@@ -112,9 +119,6 @@ class ChordPainter extends CustomPainter {
         ),
         paint..color = stringColor,
       );
-      if (differentStringStrokes) {
-        paint..strokeWidth = paint.strokeWidth - (stringStroke / totalString);
-      }
     }
 
     ///bar painter
@@ -275,6 +279,7 @@ class ChordPainter extends CustomPainter {
         old.totalString != totalString ||
         old.bar != bar ||
         old.stringStroke != stringStroke ||
+        old.differentStringStrokes != differentStringStrokes ||
         old.barStroke != barStroke ||
         old.firstFrameStroke != firstFrameStroke ||
         old.baseFret != baseFret ||
