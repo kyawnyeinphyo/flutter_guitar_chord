@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<String> _instrumentList = ['Guitar', 'Ukulele'];
   String? _selection;
   bool _useFlat = true;
+  bool _useStringThickness = true;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 .toList(),
           ),
           actions: [
-            Column(
+            Wrap(
+              spacing: 10,
               children: [
                 Row(
                   children: [
@@ -77,6 +79,23 @@ class _MyHomePageState extends State<MyHomePage> {
                       onChanged: (v) {
                         setState(() {
                           _useFlat = v;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Text(
+                      'String Thickness',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
+                    Switch(
+                      value: _useStringThickness,
+                      onChanged: (v) {
+                        setState(() {
+                          _useStringThickness = v;
                         });
                       },
                     ),
@@ -123,6 +142,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           fingers: position.fingers,
                           frets: position.frets,
                           totalString: instrument.stringCount,
+                          stringStroke: 1,
+                          differentStringStrokes: _useStringThickness
                           // labelColor: Colors.teal,
                           // mutedColor: Colors.red,
                           // tabForegroundColor: Colors.white,
