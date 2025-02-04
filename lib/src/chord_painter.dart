@@ -56,6 +56,9 @@ class ChordPainter extends CustomPainter {
   /// The color of the muted labels/strings.
   final Color mutedColor;
 
+  /// Label the open strings with o
+  final bool labelOpenStrings;
+
   /// fingers and frets must be same with totalString
   ChordPainter({
     required this.fingerSize,
@@ -73,6 +76,7 @@ class ChordPainter extends CustomPainter {
     required this.tabForegroundColor,
     required this.labelColor,
     required this.mutedColor,
+    required this.labelOpenStrings
   })  : _stringsList = frets.split(' '),
         _fingeringList = fingers.split(' ') {
     assert(_stringsList.length == totalString);
@@ -162,15 +166,23 @@ class ChordPainter extends CustomPainter {
         );
     }
 
-    ///close string label
+    ///close 'X' and open 'O' string label
     for (int i = 0; i < totalString; i++) {
-      if (_stringsList[i] != '-1') continue;
+      String textToDisplay = '';
+      if (_stringsList[i] == '-1') {
+        textToDisplay = 'X';
+      } else if (_stringsList[i] == '0' && labelOpenStrings) {
+        textToDisplay = 'O';
+      } else {
+        // no label needed
+        continue;
+      }
 
       final x = _margin + (i * _stringGap);
 
       TextPainter(
         text: TextSpan(
-          text: 'X',
+          text: textToDisplay,
           style: TextStyle(
             color: mutedColor,
             fontSize: 14,
