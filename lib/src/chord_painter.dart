@@ -160,15 +160,23 @@ class ChordPainter extends CustomPainter {
         );
     }
 
-    ///close string label
+    ///close 'X' and open 'O' string label
     for (int i = 0; i < totalString; i++) {
-      if (_stringsList[i] != '-1' && !(_stringsList[i] == '0' && labelOpenStrings)) continue;
+      String textToDisplay = '';
+      if (_stringsList[i] == '-1') {
+        textToDisplay = 'X';
+      } else if (_stringsList[i] == '0' && labelOpenStrings) {
+        textToDisplay = 'O';
+      } else {
+        // no label needed
+        continue;
+      }
 
       final x = _margin + (i * _stringGap);
 
       TextPainter(
         text: TextSpan(
-          text: _stringsList[i] == '-1' ? 'X' : 'O',
+          text: textToDisplay,
           style: TextStyle(
             color: labelColor,
             fontSize: 14,
