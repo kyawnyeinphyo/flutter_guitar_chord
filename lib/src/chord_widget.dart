@@ -63,6 +63,9 @@ class FlutterGuitarChord extends StatelessWidget {
   /// The color of labels
   final Color labelColor;
 
+  /// The color of the muted labels/strings.
+  final Color mutedColor;
+
   /// Status to show label
   final bool showLabel;
 
@@ -88,6 +91,7 @@ class FlutterGuitarChord extends StatelessWidget {
     this.tabBackgroundColor = const Color(0xff000000),
     this.tabForegroundColor = const Color(0xffffffff),
     this.labelColor = const Color(0xff000000),
+    this.mutedColor = const Color(0xff000000),
     this.showLabel = true,
     this.labelOpenStrings = false
   }) : super(key: key);
@@ -112,6 +116,7 @@ class FlutterGuitarChord extends StatelessWidget {
             barColor: barColor,
             firstFrameColor: firstFrameColor,
             labelColor: labelColor,
+            mutedColor: mutedColor,
             stringColor: stringColor,
             tabBackgroundColor: tabBackgroundColor,
             tabForegroundColor: tabForegroundColor,
