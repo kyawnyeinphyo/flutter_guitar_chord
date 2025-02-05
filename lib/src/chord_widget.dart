@@ -51,6 +51,9 @@ class FlutterGuitarChord extends StatelessWidget {
   /// The color of the bars
   final Color barColor;
 
+  /// The color of the first frame
+  final Color firstFrameColor;
+
   /// The background color of tabs
   final Color tabBackgroundColor;
 
@@ -84,6 +87,7 @@ class FlutterGuitarChord extends StatelessWidget {
     this.firstFrameStroke = 4,
     this.stringColor = const Color(0xff000000),
     this.barColor = const Color(0xff000000),
+    this.firstFrameColor = const Color(0xff000000),
     this.tabBackgroundColor = const Color(0xff000000),
     this.tabForegroundColor = const Color(0xffffffff),
     this.labelColor = const Color(0xff000000),
@@ -110,6 +114,7 @@ class FlutterGuitarChord extends StatelessWidget {
             differentStringStrokes: differentStringStrokes,
             totalString: totalString,
             barColor: barColor,
+            firstFrameColor: firstFrameColor,
             labelColor: labelColor,
             mutedColor: mutedColor,
             stringColor: stringColor,
