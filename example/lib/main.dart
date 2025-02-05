@@ -137,19 +137,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Flexible(
                         child: FlutterGuitarChord(
-                            baseFret: position.baseFret,
-                            chordName: chord.name,
-                            fingers: position.fingers,
-                            frets: position.frets,
-                            totalString: instrument.stringCount,
-                            stringStroke: 1,
-                            differentStringStrokes: _useStringThickness
-                            // labelColor: Colors.teal,
-                            // tabForegroundColor: Colors.white,
-                            // tabBackgroundColor: Colors.deepOrange,
-                            // barColor: Colors.black,
-                            // stringColor: Colors.red,
-                            // labelOpenStrings: true,                          
+                          baseFret: position.baseFret,
+                          chordName: chord.name,
+                          fingers: position.fingers,
+                          frets: position.frets,
+                          totalString: instrument.stringCount,
+                          stringStroke: 1,
+                          differentStringStrokes: _useStringThickness
+                          // labelColor: Colors.teal,
+                          // mutedColor: Colors.red,
+                          // tabForegroundColor: Colors.white,
+                          // tabBackgroundColor: Colors.deepOrange,
+                          // barColor: Colors.black,
+                          // stringColor: Colors.red,
+                          // labelOpenStrings: true,
                         ),
                       ),
                     ],

@@ -56,6 +56,9 @@ class ChordPainter extends CustomPainter {
   /// The color of labels
   final Color labelColor;
 
+  /// The color of the muted labels/strings.
+  final Color mutedColor;
+
   /// Label the open strings with o
   final bool labelOpenStrings;
 
@@ -76,6 +79,7 @@ class ChordPainter extends CustomPainter {
     required this.tabBackgroundColor,
     required this.tabForegroundColor,
     required this.labelColor,
+    required this.mutedColor,
     required this.labelOpenStrings
   })  : _stringsList = frets.split(' '),
         _fingeringList = fingers.split(' ') {
@@ -121,7 +125,9 @@ class ChordPainter extends CustomPainter {
           x,
           size.height - _margin,
         ),
-        paint..color = stringColor,
+        _stringsList[i] != '-1'
+            ? (paint..color = stringColor)
+            : (paint..color = mutedColor),
       );
     }
 
@@ -189,7 +195,7 @@ class ChordPainter extends CustomPainter {
         text: TextSpan(
           text: textToDisplay,
           style: TextStyle(
-            color: labelColor,
+            color: mutedColor,
             fontSize: 14,
             fontWeight: FontWeight.bold,
             textBaseline: TextBaseline.alphabetic,
