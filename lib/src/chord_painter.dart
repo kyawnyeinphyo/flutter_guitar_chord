@@ -139,7 +139,7 @@ class ChordPainter extends CustomPainter {
           y,
         ),
         paint
-          ..strokeWidth = i == 0 ? firstFrameStroke : barStroke
+          ..strokeWidth = (i == 0 && baseFret == 1) ? firstFrameStroke : barStroke
           ..color = i == 0 ? firstFrameColor : barColor,
       );
     }
