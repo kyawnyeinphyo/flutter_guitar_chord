@@ -66,26 +66,26 @@ class ChordPainter extends CustomPainter {
   final bool labelOpenStrings;
 
   /// fingers and frets must be same with totalString
-  ChordPainter({
-    required this.fingerSize,
-    required this.totalString,
-    required this.bar,
-    required this.stringStroke,
-    required this.differentStringStrokes,
-    required this.barStroke,
-    required this.firstFrameStroke,
-    required this.baseFret,
-    required this.frets,
-    required this.fingers,
-    required this.stringColor,
-    required this.barColor,
-    required this.firstFrameColor,
-    required this.tabBackgroundColor,
-    required this.tabForegroundColor,
-    required this.labelColor,
-    required this.mutedColor,
-    required this.labelOpenStrings
-  })  : _stringsList = frets.split(' '),
+  ChordPainter(
+      {required this.fingerSize,
+      required this.totalString,
+      required this.bar,
+      required this.stringStroke,
+      required this.differentStringStrokes,
+      required this.barStroke,
+      required this.firstFrameStroke,
+      required this.baseFret,
+      required this.frets,
+      required this.fingers,
+      required this.stringColor,
+      required this.barColor,
+      required this.firstFrameColor,
+      required this.tabBackgroundColor,
+      required this.tabForegroundColor,
+      required this.labelColor,
+      required this.mutedColor,
+      required this.labelOpenStrings})
+      : _stringsList = frets.split(' '),
         _fingeringList = fingers.split(' ') {
     assert(_stringsList.length == totalString);
     assert(_fingeringList.length == totalString);
@@ -145,7 +145,8 @@ class ChordPainter extends CustomPainter {
           y,
         ),
         paint
-          ..strokeWidth = (i == 0 && baseFret == 1) ? firstFrameStroke : barStroke
+          ..strokeWidth =
+              (i == 0 && baseFret == 1) ? firstFrameStroke : barStroke
           ..color = i == 0 ? firstFrameColor : barColor,
       );
     }

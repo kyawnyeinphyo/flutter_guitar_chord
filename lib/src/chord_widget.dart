@@ -72,29 +72,29 @@ class FlutterGuitarChord extends StatelessWidget {
   /// Status to show open strings label o
   final bool labelOpenStrings;
 
-  const FlutterGuitarChord({
-    Key? key,
-    required this.fingers,
-    required this.frets,
-    required this.baseFret,
-    required this.chordName,
-    this.totalString = 6,
-    this.fingerSize = 24,
-    this.barCount = 4,
-    this.stringStroke = 2,
-    this.differentStringStrokes = false,
-    this.barStroke = 1,
-    this.firstFrameStroke = 4,
-    this.stringColor = const Color(0xff000000),
-    this.barColor = const Color(0xff000000),
-    this.firstFrameColor = const Color(0xff000000),
-    this.tabBackgroundColor = const Color(0xff000000),
-    this.tabForegroundColor = const Color(0xffffffff),
-    this.labelColor = const Color(0xff000000),
-    this.mutedColor = const Color(0xff000000),
-    this.showLabel = true,
-    this.labelOpenStrings = false
-  }) : super(key: key);
+  const FlutterGuitarChord(
+      {Key? key,
+      required this.fingers,
+      required this.frets,
+      required this.baseFret,
+      required this.chordName,
+      this.totalString = 6,
+      this.fingerSize = 24,
+      this.barCount = 4,
+      this.stringStroke = 2,
+      this.differentStringStrokes = false,
+      this.barStroke = 1,
+      this.firstFrameStroke = 4,
+      this.stringColor = const Color(0xff000000),
+      this.barColor = const Color(0xff000000),
+      this.firstFrameColor = const Color(0xff000000),
+      this.tabBackgroundColor = const Color(0xff000000),
+      this.tabForegroundColor = const Color(0xffffffff),
+      this.labelColor = const Color(0xff000000),
+      this.mutedColor = const Color(0xff000000),
+      this.showLabel = true,
+      this.labelOpenStrings = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -103,25 +103,24 @@ class FlutterGuitarChord extends StatelessWidget {
         CustomPaint(
           size: MediaQuery.of(context).size,
           painter: ChordPainter(
-            baseFret: baseFret,
-            frets: frets,
-            fingers: fingers,
-            bar: barCount,
-            barStroke: barStroke,
-            fingerSize: fingerSize,
-            firstFrameStroke: firstFrameStroke,
-            stringStroke: stringStroke,
-            differentStringStrokes: differentStringStrokes,
-            totalString: totalString,
-            barColor: barColor,
-            firstFrameColor: firstFrameColor,
-            labelColor: labelColor,
-            mutedColor: mutedColor,
-            stringColor: stringColor,
-            tabBackgroundColor: tabBackgroundColor,
-            tabForegroundColor: tabForegroundColor,
-            labelOpenStrings: labelOpenStrings
-          ),
+              baseFret: baseFret,
+              frets: frets,
+              fingers: fingers,
+              bar: barCount,
+              barStroke: barStroke,
+              fingerSize: fingerSize,
+              firstFrameStroke: firstFrameStroke,
+              stringStroke: stringStroke,
+              differentStringStrokes: differentStringStrokes,
+              totalString: totalString,
+              barColor: barColor,
+              firstFrameColor: firstFrameColor,
+              labelColor: labelColor,
+              mutedColor: mutedColor,
+              stringColor: stringColor,
+              tabBackgroundColor: tabBackgroundColor,
+              tabForegroundColor: tabForegroundColor,
+              labelOpenStrings: labelOpenStrings),
         ),
         if (showLabel)
           Align(
