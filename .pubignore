@@ -1,0 +1,31 @@
+# Files and directories to ignore when publishing to pub.dev
+# See https://dart.dev/tools/pub/publishing#what-files-are-published
+
+# Git and tooling
+.git/
+.github/
+.idea/
+.vscode/
+*.iml
+
+# Preview assets (large GIFs hosted on GitHub)
+preview/
+
+# Example platform specific directories
+example/android/
+example/ios/
+example/linux/
+example/macos/
+example/windows/
+example/web/
+
+# Build artifacts and caches
+build/
+.dart_tool/
+.packages
+pubspec.lock
+*.log
+.DS_Store
+
+# Tests for example app
+example/test/
