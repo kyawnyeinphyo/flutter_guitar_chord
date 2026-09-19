@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -30,6 +31,9 @@ jobs:
 
       - name: Run unit & widget tests
         run: flutter test
+
+      - name: Ensure clean git state
+        run: git checkout -- .
 
       - name: Validate pub publish dry run
         run: flutter pub publish --dry-run
